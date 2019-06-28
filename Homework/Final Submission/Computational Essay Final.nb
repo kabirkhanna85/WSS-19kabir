@@ -1,0 +1,1124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     46522,       1116]
+NotebookOptionsPosition[     41641,       1022]
+NotebookOutlinePosition[     42641,       1056]
+CellTagsIndexPosition[     42572,       1051]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.770676483958727*^9, 
+  3.770676487616686*^9}},ExpressionUUID->"140b05cf-0009-48eb-a109-\
+4fdaf4f0047c"],
+
+Cell[CellGroupData[{
+
+Cell["Fate of the Love Affair?", "Title",
+ CellChangeTimes->{{3.770055572438499*^9, 3.7700555729498453`*^9}, {
+  3.770055604008165*^9, 3.7700556066618843`*^9}, {3.770373672636671*^9, 
+  3.7703737875292807`*^9}, {3.770504750178828*^9, 3.770504827668565*^9}, {
+  3.7706912000707197`*^9, 3.77069120295803*^9}},
+ CellTags->"Title",ExpressionUUID->"49ab34ee-bfd5-49f5-beef-400d3cc456dd"],
+
+Cell["Kabir Khanna, June 26, 2019", "Text",
+ CellChangeTimes->{{3.549624168509506*^9, 3.549624171985794*^9}, {
+  3.549624508772977*^9, 3.549624510775043*^9}, {3.5498187159613867`*^9, 
+  3.5498187170087957`*^9}, {3.549819049020514*^9, 3.5498190533440437`*^9}, {
+  3.77005561844785*^9, 3.7700556489651537`*^9}, {3.770504847273136*^9, 
+  3.7705048495859413`*^9}, {3.7705714344550467`*^9, 
+  3.770571440048087*^9}},ExpressionUUID->"94536f76-3fd2-4bf6-b228-\
+fa93ec9acae9"],
+
+Cell[TextData[{
+ "\n",
+ StyleBox["Introduction", "Section"],
+ "\n\n",
+ StyleBox["Ever wondered what\[CloseCurlyQuote]s the ultimate fate of your \
+relationship? Don\[CloseCurlyQuote]t worry, mathematics has it all figured \
+out for you. Here, for various cases, I\[CloseCurlyQuote]ve tried to predict \
+how the relationship between \[OpenCurlyDoubleQuote]Romeo\
+\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]Juliet\
+\[CloseCurlyDoubleQuote] is going to end or not and the flavors within it. \
+This is done by a set of differential equations which are straight forward \
+and give out pretty neat lessons.  ", "Text"],
+ "\n",
+ StyleBox["\n", "Chapter"],
+ StyleBox["Linear Dynamical Models", "Section"],
+ StyleBox[" ", "Chapter"],
+ "\n\n",
+ StyleBox["Firstly, as a start,  we assume that Romeo\[CloseCurlyQuote]s love \
+for Juliet is only influenced by two things; his independent feelings and \
+Juliet\[CloseCurlyQuote]s response towards them. This assumption holds vice \
+versa. Let ", "Text"],
+ StyleBox["x", "Text",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" ", "Text",
+  FontSlant->"Italic"],
+ StyleBox["be the ratio of love to hate that Romeo has for Juliet at time t \
+and ", "Text"],
+ StyleBox["y", "Text",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" ", "Text",
+  FontWeight->"Bold"],
+ StyleBox["be the ratio of love to hate that Juliet has for Romeo at time t. \
+A linear model would be a good start for us to get basic insights on the \
+relationship at hand. \n", "Text"],
+ StyleBox["   ", "Input"]
+}], "Text",
+ CellChangeTimes->{{3.7705048530417414`*^9, 3.770505037199914*^9}, {
+   3.7705051448160753`*^9, 3.7705052274031496`*^9}, {3.77050581461652*^9, 
+   3.7705058168226194`*^9}, {3.770505885684435*^9, 3.7705059994252105`*^9}, {
+   3.7705703200071163`*^9, 3.770570340159215*^9}, {3.7705704024496393`*^9, 
+   3.770570409716174*^9}, {3.7705705449378242`*^9, 3.7705707584108114`*^9}, {
+   3.7705708159112635`*^9, 3.7705708486207757`*^9}, {3.770570941477379*^9, 
+   3.770570981327794*^9}, {3.7705710844609394`*^9, 3.7705711641438065`*^9}, {
+   3.7705714051773577`*^9, 3.770571417658967*^9}, {3.770571514719404*^9, 
+   3.770571525330978*^9}, {3.7705715620906553`*^9, 3.77057173343237*^9}, {
+   3.7705718418357773`*^9, 3.770571934114955*^9}, {3.770571967052356*^9, 
+   3.770572017341137*^9}, {3.770582769049697*^9, 3.7705828323693695`*^9}, {
+   3.7705829013029623`*^9, 3.7705829083381453`*^9}, {3.770645100167677*^9, 
+   3.770645100299367*^9}, {3.770648371191685*^9, 3.770648412661769*^9}, {
+   3.770671394790118*^9, 3.770671408238141*^9}, {3.770671451663005*^9, 
+   3.7706714580079985`*^9}, {3.770688511129423*^9, 3.7706885141523356`*^9}, {
+   3.7706886030973673`*^9, 3.7706886068623304`*^9}, {3.7706886369298544`*^9, 
+   3.770688645470934*^9}, {3.770688731190841*^9, 3.7706887316456547`*^9}, 
+   3.770688950538987*^9, {3.770689919105897*^9, 3.770689920841251*^9}, {
+   3.770733921300739*^9, 
+   3.7707340041590567`*^9}},ExpressionUUID->"1faef68b-4268-4d9d-8c4f-\
+257b8215df6b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+       \[OpenCurlyDoubleQuote]Hard to get\[CloseCurlyDoubleQuote]\
+\>", "Section",
+ CellChangeTimes->{{3.7706888424132676`*^9, 3.7706888815745287`*^9}, {
+  3.770689908568087*^9, 
+  3.7706899114733143`*^9}},ExpressionUUID->"24c487ea-c099-429c-b5ba-\
+a9e5eca397d2"],
+
+Cell["\<\
+Assuming Romeo loves Juliet but she plays hard to get. The more Romeo desires \
+her company, the more she denies it. But when Romeo gets disheartened by it \
+and stops pursuing her, a sudden attraction towards Romeo stems in Juliet. \
+\>", "Text",
+ CellChangeTimes->{{3.7706887059693522`*^9, 
+  3.7706888123108053`*^9}},ExpressionUUID->"27daf41b-bc9e-4f49-879f-\
+f79a5a409411"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   SuperscriptBox["x", "\[Prime]",
+    MultilineFunction->None], "\[LongEqual]", 
+   RowBox[{"a", " ", "x", "      ", 
+    RowBox[{"(", 
+     RowBox[{"a", ">", "0"}], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"\t"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.770584205685584*^9, 3.770584209780596*^9}, 
+   3.7705842404615417`*^9, {3.770584853644151*^9, 3.770584855112258*^9}, {
+   3.770585275654215*^9, 
+   3.770585296974182*^9}},ExpressionUUID->"1908ef71-8bf3-4996-98cc-\
+902255fa5d9b"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["y", "\[Prime]",
+     MultilineFunction->None], "\[LongEqual]", 
+    RowBox[{
+     RowBox[{"-", "b"}], " ", "y", "   ", 
+     RowBox[{"(", 
+      RowBox[{"b", ">", "0"}], ")"}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.7705848604280396`*^9, 3.77058486428469*^9}, {
+  3.770585268775607*^9, 3.7705852735349197`*^9}, {3.7706716001378937`*^9, 
+  3.7706716007292786`*^9}, {3.7707334758569503`*^9, 
+  3.770733475952695*^9}},ExpressionUUID->"98d406d2-60a5-4bc0-a4ec-\
+beee86600a63"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[" ", "Input"], 
+  RowBox[{
+   StyleBox["Pane", "Input"], 
+   StyleBox["[", "Input"], 
+   RowBox[{
+    StyleBox[
+     RowBox[{"Manipulate", "[", 
+      RowBox[{
+       RowBox[{"StreamDensityPlot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"a", "*", "x"}], ",", " ", 
+           RowBox[{
+            RowBox[{"-", "b"}], "*", "y"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", " ", 
+         InterpretationBox[
+          DynamicModuleBox[{Typeset`open = False}, 
+           TemplateBox[{"Expression","SequenceIcon",GridBox[{{
+                RowBox[{
+                  TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                  TagBox["Sequence", "IconizedItem"]}]}, {
+                RowBox[{
+                  TagBox["\"Length: \"", "IconizedLabel"], 
+                  "\[InvisibleSpace]", 
+                  TagBox["2", "IconizedItem"]}]}, {
+                RowBox[{
+                  TagBox["\"Byte count: \"", "IconizedLabel"], 
+                  "\[InvisibleSpace]", 
+                  TagBox["432", "IconizedItem"]}]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+              "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],Dynamic[
+             Typeset`open]},
+            "IconizedObject"]],
+          Sequence[
+           Sequence[
+           Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+            Black], FrameLabel -> {$CellContext`x, $CellContext`y}],
+          SelectWithContents->True,
+          Selectable->False]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", " ", "0", ",", "10"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"b", ",", " ", "0", ",", " ", "10"}], "}"}]}], "]"}], "Input"], 
+    StyleBox[",", "Input"], 
+    StyleBox[" ", "Input"], 
+    StyleBox["Full", "Input"], 
+    StyleBox[",", "Input"], 
+    StyleBox[" ", "Input"], 
+    RowBox[{
+     StyleBox["Alignment", "Input"], 
+     StyleBox["\[Rule]", "Input"], "Center"}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.77058889183311*^9, 3.7705889749388695`*^9}, {
+   3.7705890423914447`*^9, 3.770589081842925*^9}, {3.770589634445865*^9, 
+   3.7705896387094665`*^9}, {3.770589739170756*^9, 3.770589764318467*^9}, {
+   3.7706294307935767`*^9, 3.7706294421591487`*^9}, {3.770671532094838*^9, 
+   3.770671546674717*^9}, {3.770673202997537*^9, 3.7706732178338547`*^9}, {
+   3.77067335229525*^9, 3.770673369610942*^9}, {3.7706897597761755`*^9, 
+   3.7706897607725053`*^9}, {3.7707326687378216`*^9, 3.7707326870827475`*^9}, 
+   3.7707327184398456`*^9, {3.7707331006213417`*^9, 3.77073311070636*^9}, {
+   3.770733194973756*^9, 3.7707331964737444`*^9}, {3.77073330148102*^9, 
+   3.770733309436735*^9}, {3.7707334216754465`*^9, 3.77073348393434*^9}, {
+   3.770733581093395*^9, 3.770733587775519*^9}, {3.770733658994526*^9, 
+   3.7707336674718437`*^9}},
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"66c7d404-bdf4-4062-99f7-fd2790078a7a"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[
+   StyleBox[
+    DynamicModuleBox[{$CellContext`a$$ = 8.370000000000001, $CellContext`b$$ =
+      5.99, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+       Hold[$CellContext`a$$], 0, 10}, {
+       Hold[$CellContext`b$$], 0, 10}}, Typeset`size$$ = {540., {261., 270.}},
+      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+     True, $CellContext`a$1425824$$ = 0, $CellContext`b$1425825$$ = 0}, 
+     DynamicBox[Manipulate`ManipulateBoxes[
+      1, StandardForm, 
+       "Variables" :> {$CellContext`a$$ = 0, $CellContext`b$$ = 0}, 
+       "ControllerVariables" :> {
+         Hold[$CellContext`a$$, $CellContext`a$1425824$$, 0], 
+         Hold[$CellContext`b$$, $CellContext`b$1425825$$, 0]}, 
+       "OtherVariables" :> {
+        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+         Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+         Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+       StreamDensityPlot[{$CellContext`a$$ $CellContext`x, \
+(-$CellContext`b$$) $CellContext`y}, {$CellContext`x, -10, 
+          10}, {$CellContext`y, -10, 10}, 
+         Sequence[
+          Sequence[
+          Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+           Black], FrameLabel -> {$CellContext`x, $CellContext`y}]], 
+       "Specifications" :> {{$CellContext`a$$, 0, 10}, {$CellContext`b$$, 0, 
+          10}}, "Options" :> {}, "DefaultOptions" :> {}],
+      ImageSizeCache->{612., {350., 359.}},
+      SingleEvaluation->True],
+     Deinitialization:>None,
+     DynamicModuleValues:>{},
+     SynchronousInitialization->True,
+     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+     UnsavedVariables:>{Typeset`initDone$$},
+     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+    Deployed->True,
+    StripOnInput->False],
+   Manipulate`InterpretManipulate[1]],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{
+  3.77062944975284*^9, 3.770645128747283*^9, 3.7706715479534087`*^9, 
+   3.770673218302603*^9, 3.770673376865493*^9, 3.7706893804939203`*^9, 
+   3.770689761408805*^9, {3.770732693232319*^9, 3.7707327242074156`*^9}, 
+   3.7707331112588825`*^9, 3.77073315899471*^9, 3.7707333099842715`*^9, 
+   3.7707333550267625`*^9, 3.7707334894824953`*^9, {3.7707336542283297`*^9, 
+   3.770733667997441*^9}},
+ CellLabel->
+  "Out[112]=",ExpressionUUID->"891d9073-d0b4-48f8-8df0-a9e28e9ab179"]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{
+  3.770733890370496*^9},ExpressionUUID->"1b56c607-3446-476b-8dd0-\
+cb370b4cca05"],
+
+Cell["\<\
+So, as we see, for all the values of a and b, the output is an ellipse which \
+suggests that the relationship alternates periodically between love and hate \
+and unfortunately, only goes the \[OpenCurlyDoubleQuote]right\
+\[CloseCurlyDoubleQuote] way one fourth of the time.
+\
+\>", "Text",
+ CellChangeTimes->{{3.770585140196516*^9, 3.770585249148138*^9}, {
+  3.7705853281607676`*^9, 3.7705853363129654`*^9}, {3.7705853693190365`*^9, 
+  3.7705853977230625`*^9}, {3.7705855216111727`*^9, 3.770585586427802*^9}, {
+  3.770645154616074*^9, 3.7706452102482386`*^9}, {3.7706717555591903`*^9, 
+  3.7706717795649457`*^9}, {3.7706744729037304`*^9, 3.77067453205652*^9}, {
+  3.7706762615392623`*^9, 3.7706762745486555`*^9}, {3.770688899334981*^9, 
+  3.7706889017245884`*^9}},ExpressionUUID->"89d16213-c1c4-48b5-9e35-\
+cb90638e580a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+Cautious lovers\
+\>", "Section",
+ CellChangeTimes->{{3.770688920536259*^9, 
+  3.7706889313274283`*^9}},ExpressionUUID->"01d38c9a-3bce-44ad-8c36-\
+ce146cd4446e"],
+
+Cell["\<\
+Now, we increase one level of complexity. Let both Romeo and Juliet be \
+cautious lovers to the same degree.This means that the more they love their \
+partner, the more they' re cautious about being \"needy\". But at the same \
+time, they become optimistic about the relationship based on the degree of \
+positive response from their partner. In that case the equations become,
+\
+\>", "Text",
+ CellChangeTimes->{{3.7706889062155695`*^9, 3.770688910459219*^9}, 
+   3.7707169117912865`*^9, {3.7707338946300955`*^9, 
+   3.770733901606434*^9}},ExpressionUUID->"1021b8e3-ed3d-4d50-b105-\
+5f681b24320c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["x", "\[Prime]",
+    MultilineFunction->None], "\[LongEqual]", " ", 
+   RowBox[{
+    RowBox[{"b", " ", "y"}], "    ", "-", "  ", 
+    RowBox[{"a", " ", "x", "         ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"a", ">", "0"}], ",", " ", 
+       RowBox[{"b", ">", "0"}]}], ")"}]}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.770671689539736*^9, 
+  3.7706717321168523`*^9}},ExpressionUUID->"63c83326-beb2-4152-a538-\
+f6222c6ab62d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["y", "\[Prime]",
+     MultilineFunction->None], "\[LongEqual]", " ", 
+    RowBox[{
+     RowBox[{"b", " ", "x"}], "    ", "-", "  ", 
+     RowBox[{"a", " ", "y", "         ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"a", ">", "0"}], ",", " ", 
+        RowBox[{"b", ">", "0"}]}], ")"}]}]}]}], "\[IndentingNewLine]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.7705857115108056`*^9, 3.770585729350088*^9}, {
+   3.7705857724158983`*^9, 3.770585789201039*^9}, {3.770671614249151*^9, 
+   3.7706716277330914`*^9}, 3.770671729434059*^9, 
+   3.7706718996148777`*^9},ExpressionUUID->"0c71ab4f-3795-4b6a-baf1-\
+96fe27c1cb5b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[" ", "Input"], 
+  RowBox[{
+   StyleBox["Pane", "Input"], 
+   StyleBox["[", "Input"], 
+   RowBox[{
+    StyleBox[
+     RowBox[{"Manipulate", "[", 
+      RowBox[{
+       RowBox[{"StreamDensityPlot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "a"}], "*", "x"}], " ", "+", " ", 
+            RowBox[{"b", "*", "y"}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"b", "*", "x"}], "-", 
+            RowBox[{"a", "*", "y"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", " ", 
+         InterpretationBox[
+          DynamicModuleBox[{Typeset`open = False}, 
+           TemplateBox[{"Expression","SequenceIcon",GridBox[{{
+                RowBox[{
+                  TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                  TagBox["Sequence", "IconizedItem"]}]}, {
+                RowBox[{
+                  TagBox["\"Length: \"", "IconizedLabel"], 
+                  "\[InvisibleSpace]", 
+                  TagBox["2", "IconizedItem"]}]}, {
+                RowBox[{
+                  TagBox["\"Byte count: \"", "IconizedLabel"], 
+                  "\[InvisibleSpace]", 
+                  TagBox["432", "IconizedItem"]}]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+              "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],Dynamic[
+             Typeset`open]},
+            "IconizedObject"]],
+          Sequence[
+           Sequence[
+           Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+            Black], FrameLabel -> {$CellContext`x, $CellContext`y}],
+          SelectWithContents->True,
+          Selectable->False]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", " ", "0", ",", "10"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"b", ",", " ", "0", ",", " ", "10"}], "}"}]}], "]"}], "Input"], 
+    StyleBox[",", "Input"], 
+    StyleBox[" ", "Input"], 
+    StyleBox["Full", "Input"], 
+    StyleBox[",", "Input"], 
+    StyleBox[" ", "Input"], 
+    RowBox[{
+     StyleBox["Alignment", "Input"], 
+     StyleBox["\[Rule]", "Input"], "Center"}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.7706295138404264`*^9, 3.770629520098719*^9}, {
+   3.7706295722571797`*^9, 3.770629582642432*^9}, {3.770672471784679*^9, 
+   3.770672482627678*^9}, {3.770672644144665*^9, 3.7706726459817514`*^9}, {
+   3.770672697534895*^9, 3.7706727080098753`*^9}, 3.7706727478702555`*^9, {
+   3.770673255775378*^9, 3.770673315593378*^9}, {3.770689749690156*^9, 
+   3.770689750828111*^9}, {3.770732728936764*^9, 3.770732729306772*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"0cbc0994-59ee-4c4e-bfd5-81ae715e559d"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[
+   StyleBox[
+    DynamicModuleBox[{$CellContext`a$$ = 7.08, $CellContext`b$$ = 
+     4.3100000000000005`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+       Hold[$CellContext`a$$], 0, 10}, {
+       Hold[$CellContext`b$$], 0, 10}}, Typeset`size$$ = {540., {261., 270.}},
+      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+     True, $CellContext`a$522745$$ = 0, $CellContext`b$522746$$ = 0}, 
+     DynamicBox[Manipulate`ManipulateBoxes[
+      1, StandardForm, 
+       "Variables" :> {$CellContext`a$$ = 0, $CellContext`b$$ = 0}, 
+       "ControllerVariables" :> {
+         Hold[$CellContext`a$$, $CellContext`a$522745$$, 0], 
+         Hold[$CellContext`b$$, $CellContext`b$522746$$, 0]}, 
+       "OtherVariables" :> {
+        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+         Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+         Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+       StreamDensityPlot[{(-$CellContext`a$$) $CellContext`x + \
+$CellContext`b$$ $CellContext`y, $CellContext`b$$ $CellContext`x - \
+$CellContext`a$$ $CellContext`y}, {$CellContext`x, -10, 
+          10}, {$CellContext`y, -10, 10}, 
+         Sequence[
+          Sequence[
+          Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+           Black], FrameLabel -> {$CellContext`x, $CellContext`y}]], 
+       "Specifications" :> {{$CellContext`a$$, 0, 10}, {$CellContext`b$$, 0, 
+          10}}, "Options" :> {}, "DefaultOptions" :> {}],
+      ImageSizeCache->{612., {350., 359.}},
+      SingleEvaluation->True],
+     Deinitialization:>None,
+     DynamicModuleValues:>{},
+     SynchronousInitialization->True,
+     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+     UnsavedVariables:>{Typeset`initDone$$},
+     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+    Deployed->True,
+    StripOnInput->False],
+   Manipulate`InterpretManipulate[1]],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{
+  3.7706295836886363`*^9, 3.7706724833667336`*^9, 3.7706726465053763`*^9, 
+   3.7706727151118493`*^9, 3.7706727493343506`*^9, {3.770673270452123*^9, 
+   3.7706732859716444`*^9}, 3.770673397943115*^9, 3.7706893822881565`*^9, 
+   3.770689751580103*^9, 3.770732694892845*^9, 3.770732730225317*^9},
+ CellLabel->
+  "Out[101]=",ExpressionUUID->"718c587a-43fd-4916-8de4-350504717fc4"]
+}, Open  ]],
+
+Cell[BoxData["\[AliasDelimiter]"], "Input",
+ CellChangeTimes->{
+  3.770673425846486*^9},ExpressionUUID->"72f2536b-9346-4d1d-85f6-\
+5fc731770c6e"],
+
+Cell["\<\
+As one plays around with the parameters, one realizes that too much caution \
+along with low responsiveness towards others\[CloseCurlyQuote] feelings, \
+always leads to the doom (assuming the relationship starts out positively in \
+the first quadrant). On the other hand, caution is good as long as one trusts \
+the others\[CloseCurlyQuote] feelings and responds accordingly. In that case, \
+it ends up being an explosive (happy?) relationship. \
+\>", "Text",
+ CellChangeTimes->{{3.770586475051586*^9, 3.770586545000493*^9}, {
+  3.7705865758120823`*^9, 3.770586753535609*^9}, {3.7706296444440956`*^9, 
+  3.770629647761258*^9}, {3.770671927157176*^9, 
+  3.7706719453953943`*^9}},ExpressionUUID->"b8075559-c1ba-42a6-98cc-\
+58eac0374231"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Peas in a pod", "Section",
+ CellChangeTimes->{
+  3.7706889547687016`*^9, {3.7706890296553144`*^9, 3.770689038778908*^9}, {
+   3.7706890757878885`*^9, 
+   3.770689081710043*^9}},ExpressionUUID->"5f8e6101-be3b-477e-bb57-\
+f221494fca40"],
+
+Cell["\<\
+
+To start off simple, let' s assume that Romeo and Juliet have exact love \
+patterns. In that case, \
+\>", "Text",
+ CellChangeTimes->{{3.7706890462808356`*^9, 
+  3.7706891396649923`*^9}},ExpressionUUID->"25376d35-a03c-468f-8407-\
+feffcc87058e"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   FormBox[
+    RowBox[{
+     SuperscriptBox["x", "\[Prime]",
+      MultilineFunction->None], "\[LongEqual]", " ", 
+     RowBox[{
+      RowBox[{"a", " ", "x"}], "    ", "+", "  ", 
+      RowBox[{"b", " ", "y", "         ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"a", ">", "0"}], ",", " ", 
+         RowBox[{"b", ">", "0"}]}], ")"}]}]}]}],
+    TraditionalForm], "\[IndentingNewLine]", 
+   FormBox[
+    RowBox[{
+     SuperscriptBox["y", "\[Prime]",
+      MultilineFunction->None], "\[LongEqual]", " ", 
+     RowBox[{
+      RowBox[{"a", " ", "y"}], "    ", "+", "  ", 
+      RowBox[{"b", " ", "x", "         ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"a", ">", "0"}], ",", " ", 
+         RowBox[{"b", ">", "0"}]}], ")"}]}]}]}],
+    TraditionalForm]}]}]], "Input",
+ CellChangeTimes->{{3.7706891432015266`*^9, 3.7706891524248557`*^9}, {
+  3.7706892488920126`*^9, 
+  3.770689277689965*^9}},ExpressionUUID->"e2dc4bef-a7e4-47af-a751-\
+98842c5af161"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Pane", "[", 
+  RowBox[{
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{
+      StyleBox["StreamDensityPlot", "Input"], 
+      StyleBox["[", "Input"], 
+      RowBox[{
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", "*", "x"}], "+", 
+           RowBox[{"b", "*", "y"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"a", "*", "y"}], "+", 
+           RowBox[{"b", "*", "x"}]}]}], "}"}], "Input"], 
+       StyleBox[",", "Input"], 
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "10"}], ",", "10"}], "}"}], "Input"], 
+       StyleBox[",", "Input"], 
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"-", "10"}], ",", "10"}], "}"}], "Input"], ",", 
+       InterpretationBox[
+        DynamicModuleBox[{Typeset`open = False}, 
+         TemplateBox[{"Expression","SequenceIcon",GridBox[{{
+              RowBox[{
+                TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["Sequence", "IconizedItem"]}]}, {
+              RowBox[{
+                TagBox["\"Length: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["2", "IconizedItem"]}]}, {
+              RowBox[{
+                TagBox["\"Byte count: \"", "IconizedLabel"], 
+                "\[InvisibleSpace]", 
+                TagBox["432", "IconizedItem"]}]}}, 
+            GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+            "Column", 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],Dynamic[
+           Typeset`open]},
+          "IconizedObject"]],
+        Sequence[
+         Sequence[
+         Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+          Black], FrameLabel -> {$CellContext`x, $CellContext`y}],
+        SelectWithContents->True,
+        Selectable->False]}], 
+      StyleBox["]", "Input"]}], 
+     StyleBox[",", "Input"], 
+     StyleBox[" ", "Input"], 
+     StyleBox[
+      RowBox[{"{", 
+       RowBox[{"a", ",", " ", 
+        RowBox[{"-", "10"}], ",", "0"}], "}"}], "Input"], 
+     StyleBox[",", "Input"], 
+     StyleBox[" ", "Input"], 
+     StyleBox[
+      RowBox[{"{", 
+       RowBox[{"b", ",", " ", "0", ",", " ", "10"}], "}"}], "Input"]}], "]"}],
+    ",", " ", "Full", ",", " ", 
+   RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.770689336463724*^9, 3.7706893765574512`*^9}, {
+  3.770689737908678*^9, 3.7706897391673093`*^9}, {3.7706902340712013`*^9, 
+  3.770690239623376*^9}, {3.770691035896993*^9, 3.770691045269884*^9}, {
+  3.770732737486887*^9, 3.77073273783895*^9}},
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"faebdc04-9922-45a0-977a-f6fe768eaa5a"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[
+   StyleBox[
+    DynamicModuleBox[{$CellContext`a$$ = -10, $CellContext`b$$ = 0, 
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+       Hold[$CellContext`a$$], -10, 0}, {
+       Hold[$CellContext`b$$], 0, 10}}, Typeset`size$$ = {540., {261., 270.}},
+      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+     True, $CellContext`a$532159$$ = 0, $CellContext`b$532160$$ = 0}, 
+     DynamicBox[Manipulate`ManipulateBoxes[
+      1, StandardForm, 
+       "Variables" :> {$CellContext`a$$ = -10, $CellContext`b$$ = 0}, 
+       "ControllerVariables" :> {
+         Hold[$CellContext`a$$, $CellContext`a$532159$$, 0], 
+         Hold[$CellContext`b$$, $CellContext`b$532160$$, 0]}, 
+       "OtherVariables" :> {
+        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+         Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+         Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+       StreamDensityPlot[{$CellContext`a$$ $CellContext`x + $CellContext`b$$ \
+$CellContext`y, $CellContext`a$$ $CellContext`y + $CellContext`b$$ \
+$CellContext`x}, {$CellContext`x, -10, 10}, {$CellContext`y, -10, 10}, 
+         Sequence[
+          Sequence[
+          Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+           Black], FrameLabel -> {$CellContext`x, $CellContext`y}]], 
+       "Specifications" :> {{$CellContext`a$$, -10, 0}, {$CellContext`b$$, 0, 
+          10}}, "Options" :> {}, "DefaultOptions" :> {}],
+      ImageSizeCache->{612., {350., 359.}},
+      SingleEvaluation->True],
+     Deinitialization:>None,
+     DynamicModuleValues:>{},
+     SynchronousInitialization->True,
+     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+     UnsavedVariables:>{Typeset`initDone$$},
+     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+    Deployed->True,
+    StripOnInput->False],
+   Manipulate`InterpretManipulate[1]],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{
+  3.7706893846827135`*^9, {3.7706894511977587`*^9, 3.7706894525052576`*^9}, {
+   3.7706896456216297`*^9, 3.770689648604635*^9}, 3.770689739932263*^9, {
+   3.7706900441982207`*^9, 3.7706900455276637`*^9}, {3.770690240521942*^9, 
+   3.770690247398573*^9}, {3.770716967607922*^9, 3.770716973451293*^9}, 
+   3.7707326962881117`*^9, 3.770732738760502*^9},
+ CellLabel->
+  "Out[102]=",ExpressionUUID->"48e6d032-5626-4303-abaf-2b593b05857b"]
+}, Open  ]],
+
+Cell["\<\
+From this, we see that if either of them are cautious or too eager (|a|<|b|), \
+the relationship ends in love for eternity or war depending on where they \
+start from.  On the other hand, when |b|<|a|, or when the lovers are on the \
+more cautious side than narcissistic, the relationship just collapses in a \
+stable node at the origin indicating mutual apathy.   \
+\>", "Text",
+ CellChangeTimes->{{3.7706894884590645`*^9, 3.770689499886525*^9}, {
+  3.770689574208649*^9, 3.7706896172255917`*^9}, {3.770690082994466*^9, 
+  3.770690097953433*^9}, {3.770690306861496*^9, 3.770690401791473*^9}, {
+  3.770717004241906*^9, 
+  3.7707170164432664`*^9}},ExpressionUUID->"33217d2b-5cf4-4d4a-a260-\
+6bab4907af69"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["A Non-Linear Model", "Section",
+ CellChangeTimes->{{3.770587527277074*^9, 3.7705875283990707`*^9}, {
+   3.7705881160294867`*^9, 3.7705881316696854`*^9}, 3.7705894895922766`*^9, {
+   3.77066630257185*^9, 
+   3.770666303594115*^9}},ExpressionUUID->"10792d6c-5716-4573-80c1-\
+4aa31d4705fd"],
+
+Cell["\<\
+We could always add non linearities to the models. Suppose Romeo reacts \
+positively when Juliet displays sufficient love but starts retracting when \
+she overdoes it and vice versa. \
+\>", "Text",
+ CellChangeTimes->{{3.7705875788790584`*^9, 3.770587606159058*^9}, {
+  3.770587717242939*^9, 3.7705877187130404`*^9}, {3.7705881436087494`*^9, 
+  3.7705882280947437`*^9}, {3.7705908702076344`*^9, 3.7705908868401127`*^9}, {
+  3.77059097994209*^9, 3.7705910177729087`*^9}, {3.7705910563338118`*^9, 
+  3.770591084999094*^9}, {3.770635904386033*^9, 3.7706359222203274`*^9}, {
+  3.770635953425866*^9, 3.7706359744167213`*^9}, {3.770645424509159*^9, 
+  3.770645431762786*^9}, {3.770666177176245*^9, 
+  3.770666185094038*^9}},ExpressionUUID->"a035b195-6fba-4c58-8319-\
+d09a4d028f1e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["x", "\[Prime]",
+    MultilineFunction->None], "\[LongEqual]", "             ", 
+   RowBox[{
+    RowBox[{"a", " ", "x"}], "          ", "+", "     ", 
+    RowBox[{"y", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       TemplateBox[{"y"},
+        "Abs"]}], ")"}], "b"}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.770591174235447*^9, 3.7705912032897005`*^9}, {
+  3.770666252781028*^9, 3.7706662957490625`*^9}, {3.7706663546066384`*^9, 
+  3.770666360681391*^9}},ExpressionUUID->"45e3750b-ad65-4805-bbe3-\
+d7f9c31f3e26"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["y", "\[Prime]",
+     MultilineFunction->None], "\[LongEqual]", "      ", 
+    RowBox[{
+     RowBox[{"c", " ", 
+      RowBox[{"x", "(", 
+       RowBox[{"1", "-", 
+        TemplateBox[{"x"},
+         "Abs"]}], ")"}]}], "  ", "+", "         ", 
+     RowBox[{"d", " ", "y"}]}]}], "\[IndentingNewLine]"}], TraditionalForm]], \
+"Input",
+ CellChangeTimes->{{3.7706663882606564`*^9, 
+  3.7706664205582323`*^9}},ExpressionUUID->"ddbe7e02-c6f5-486a-9dc3-\
+2b92fbf7aa3f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["Pane", "Input"], 
+  StyleBox["[", "Input"], 
+  RowBox[{
+   RowBox[{
+    StyleBox["Manipulate", "Input"], 
+    StyleBox["[", "Input"], 
+    RowBox[{
+     RowBox[{
+      StyleBox["StreamDensityPlot", "Input"], 
+      StyleBox["[", "Input"], 
+      RowBox[{
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", "*", "x"}], " ", "+", " ", 
+           RowBox[{"(", 
+            RowBox[{"y", "*", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", 
+               RowBox[{"Abs", "[", "y", "]"}]}], ")"}], "*", "b"}], ")"}]}], 
+          ",", " ", 
+          RowBox[{
+           RowBox[{"c", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"Abs", "[", "x", "]"}]}], ")"}], "*", "x"}], "+", 
+           RowBox[{"d", "*", "y"}]}]}], "}"}], "Input"], 
+       StyleBox[",", "Input"], 
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "4"}], ",", " ", "4"}], "}"}], "Input"], 
+       StyleBox[",", "Input"], 
+       StyleBox[
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"-", "4"}], ",", "4"}], "}"}], "Input"], 
+       StyleBox[",", "Input"], 
+       StyleBox[" ", "Input"], 
+       InterpretationBox[
+        DynamicModuleBox[{Typeset`open = False}, 
+         TemplateBox[{"Expression","SequenceIcon",GridBox[{{
+              RowBox[{
+                TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["Sequence", "IconizedItem"]}]}, {
+              RowBox[{
+                TagBox["\"Length: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["2", "IconizedItem"]}]}, {
+              RowBox[{
+                TagBox["\"Byte count: \"", "IconizedLabel"], 
+                "\[InvisibleSpace]", 
+                TagBox["432", "IconizedItem"]}]}}, 
+            GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+            "Column", 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],Dynamic[
+           Typeset`open]},
+          "IconizedObject"]],
+        Sequence[
+         Sequence[
+         Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+          Black], FrameLabel -> {$CellContext`x, $CellContext`y}],
+        SelectWithContents->True,
+        Selectable->False]}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      StyleBox[
+       RowBox[{"a", ",", " ", 
+        RowBox[{"-", "10"}], ",", "10"}], "Input"], 
+      StyleBox["}", "Input"]}], 
+     StyleBox[",", "Input"], 
+     StyleBox[" ", "Input"], 
+     StyleBox[
+      RowBox[{"{", 
+       RowBox[{"b", ",", " ", 
+        RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], "Input"], 
+     StyleBox[",", "Input"], 
+     StyleBox[" ", "Input"], 
+     StyleBox[
+      RowBox[{"{", 
+       RowBox[{"c", ",", " ", 
+        RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], "Input"], 
+     StyleBox[",", "Input"], 
+     StyleBox[" ", "Input"], 
+     StyleBox[
+      RowBox[{"{", 
+       RowBox[{"d", ",", " ", 
+        RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], "Input"]}], 
+    StyleBox["]", "Input"]}], 
+   StyleBox[",", "Input"], 
+   StyleBox[" ", "Input"], 
+   StyleBox["Full", "Input"], 
+   StyleBox[",", "Input"], 
+   StyleBox[" ", "Input"], 
+   RowBox[{
+    StyleBox["Alignment", "Input"], 
+    StyleBox["\[Rule]", "Input"], "Center"}]}], "]"}]], "Code",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQ3XfjC+dV8TeOCkeLBEC0XsbSI8+BdAcDy1EQfehE
+R/17IM3yXK0FRGe4MPSC6C0ea/tB9ITaqOkgOvsW9xwQPYlx5RUQvaLP5xqI
+PinMdgdExyzLAdPB4Rdeg2iRzPtvQfShC22RH4B0RXNuNIgW6ejNAdEF/NJ5
+IFpmXmsZiO7erFQOouPjY7pBdMqaGf0g+tl2s/kgmimtEUIvP70eRK9gktgI
+ogMYQ3aC6C3bq8D0uxzpgj9A+kemcSGIzjg5qRRES7Z5VoJoBeHATSA65WHK
+XhAtUbfF+i+QDu93sAfRSrF170C00PdpH0F0j46ipJTEG0ebf9pgGgDC06s7
+
+  "],
+ FontWeight->"Plain",
+ CellLabel->
+  "In[103]:=",ExpressionUUID->"dea7ed3c-e530-43b6-82fa-e805e7ff09ec"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[
+   StyleBox[
+    DynamicModuleBox[{$CellContext`a$$ = -10, $CellContext`b$$ = -10, \
+$CellContext`c$$ = -10, $CellContext`d$$ = -10, Typeset`show$$ = True, 
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+     "\"untitled\"", Typeset`specs$$ = {{
+       Hold[$CellContext`a$$], -10, 10}, {
+       Hold[$CellContext`b$$], -10, 10}, {
+       Hold[$CellContext`c$$], -10, 10}, {
+       Hold[$CellContext`d$$], -10, 10}}, Typeset`size$$ = {
+     540., {265., 274.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+     Typeset`skipInitDone$$ = True, $CellContext`a$533629$$ = 
+     0, $CellContext`b$533630$$ = 0, $CellContext`c$533631$$ = 
+     0, $CellContext`d$533632$$ = 0}, 
+     DynamicBox[Manipulate`ManipulateBoxes[
+      1, StandardForm, 
+       "Variables" :> {$CellContext`a$$ = -10, $CellContext`b$$ = -10, \
+$CellContext`c$$ = -10, $CellContext`d$$ = -10}, "ControllerVariables" :> {
+         Hold[$CellContext`a$$, $CellContext`a$533629$$, 0], 
+         Hold[$CellContext`b$$, $CellContext`b$533630$$, 0], 
+         Hold[$CellContext`c$$, $CellContext`c$533631$$, 0], 
+         Hold[$CellContext`d$$, $CellContext`d$533632$$, 0]}, 
+       "OtherVariables" :> {
+        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+         Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+         Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+       StreamDensityPlot[{$CellContext`a$$ $CellContext`x + $CellContext`y (1 - 
+            Abs[$CellContext`y]) $CellContext`b$$, $CellContext`c$$ (1 - 
+            Abs[$CellContext`x]) $CellContext`x + $CellContext`d$$ \
+$CellContext`y}, {$CellContext`x, -4, 4}, {$CellContext`y, -4, 4}, 
+         Sequence[
+          Sequence[
+          Background -> White, ColorFunction -> "Rainbow", StreamStyle -> 
+           Black], FrameLabel -> {$CellContext`x, $CellContext`y}]], 
+       "Specifications" :> {{$CellContext`a$$, -10, 
+          10}, {$CellContext`b$$, -10, 10}, {$CellContext`c$$, -10, 
+          10}, {$CellContext`d$$, -10, 10}}, "Options" :> {}, 
+       "DefaultOptions" :> {}],
+      ImageSizeCache->{612., {395., 404.}},
+      SingleEvaluation->True],
+     Deinitialization:>None,
+     DynamicModuleValues:>{},
+     SynchronousInitialization->True,
+     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+     UnsavedVariables:>{Typeset`initDone$$},
+     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+    Deployed->True,
+    StripOnInput->False],
+   Manipulate`InterpretManipulate[1]],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{{3.7706739084945383`*^9, 3.7706739275974755`*^9}, {
+   3.770675086179715*^9, 3.770675118342683*^9}, 3.770689383706329*^9, {
+   3.770719476272565*^9, 3.770719477791501*^9}, {3.770719521478619*^9, 
+   3.7707195271943564`*^9}, 3.7707326979666204`*^9, 3.770732746083928*^9},
+ CellLabel->
+  "Out[103]=",ExpressionUUID->"44418eca-4576-4797-964a-ff6521c8d094"]
+}, Open  ]],
+
+Cell["\<\
+It\[CloseCurlyQuote]s interesting to see that here when Romeo is saintly and \
+Juliet yearns for love (a = b = -2, c = d = 1),  unlike the other cases, \
+there exists a possibility of a co-operative/successful relationship. So I \
+guess there\[CloseCurlyQuote]s some truth to opposites being attracted to \
+each other. \
+\>", "Text",
+ CellChangeTimes->{{3.770670921490254*^9, 3.7706710229437017`*^9}, {
+  3.7706739532847424`*^9, 3.770673997860552*^9}, {3.7706747815438375`*^9, 
+  3.7706748428389273`*^9}, {3.770674878254854*^9, 3.770675015865778*^9}, {
+  3.770691136185644*^9, 
+  3.770691158392262*^9}},ExpressionUUID->"db1515e5-774f-43f8-a0fc-\
+3f89bd7e71b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.7706904173458595`*^9, 3.770690422037303*^9}, {
+  3.7706904849021463`*^9, 
+  3.770690493749445*^9}},ExpressionUUID->"475ab8a8-6736-4109-8450-\
+d4e28f5f5a76"],
+
+Cell["\<\
+We\[CloseCurlyQuote]ve studied the basic models to model love affairs. One \
+could add more dimensions and non linearities to get richer behaviour but it \
+would be a complicated task since one would be dealing with n-dimensional \
+spaces. For example, when one shifts from 2-D to 3-D itself, the extent of \
+possibilities increases vastly (chaos kicks in). Nevertheless, since even the \
+most simplest of equations gave us rich dynamics with useful insights, this \
+method of modelling interpersonal systems could be useful. 
+
+All the best with your relationship. I hope you take away some lessons from \
+this. \
+\>", "Text",
+ CellChangeTimes->{{3.770690429198149*^9, 3.770690432024617*^9}, {
+  3.7706904651449747`*^9, 3.7706904706193295`*^9}, {3.7706905838962593`*^9, 
+  3.7706908868148212`*^9}, {3.7706910808048124`*^9, 3.7706910878848715`*^9}, {
+  3.770732760894265*^9, 
+  3.770732785161352*^9}},ExpressionUUID->"dd385f59-0714-4cbf-bcd3-\
+c014da9ac8f4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["References", "Section",
+ CellChangeTimes->{{3.770690898603307*^9, 
+  3.770690912552961*^9}},ExpressionUUID->"be234b64-9d17-4fce-9a91-\
+311cbf9810a0"],
+
+Cell[CellGroupData[{
+
+Cell["Non-Linear Dynamics and Chaos - Steven H. Strogatz", "Item",
+ CellChangeTimes->{{3.770690915012377*^9, 3.7706909183504815`*^9}, {
+  3.7706909569531727`*^9, 
+  3.770690979939672*^9}},ExpressionUUID->"288421ab-0eb2-4848-bc99-\
+dc4f83cc2e6f"],
+
+Cell["Dynamical Models of Love - J.C. Sprott", "Item",
+ CellChangeTimes->{{3.770690915012377*^9, 3.7706909183504815`*^9}, {
+  3.7706909569531727`*^9, 
+  3.7706910061076574`*^9}},ExpressionUUID->"49789287-176d-4e83-90f0-\
+0bc0abbd0642"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 976},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+DockedCells->{
+  Cell[
+   TextData[{
+     StyleBox["  WOLFRAM ", 
+      RGBColor[0.97, 0.83, 0.35], FontFamily -> "Source Sans Pro", FontWeight -> 
+      Bold, FontSize -> 40], 
+     StyleBox["SUMMER SCHOOL", 
+      GrayLevel[1], FontFamily -> "Source Sans Pro", FontSize -> 40], 
+     StyleBox[" 2019", 
+      RGBColor[0.97, 0.83, 0.35], FontFamily -> "Source Sans Pro", FontSize -> 
+      40]}], CellFrameMargins -> 10, Background -> 
+   RGBColor[0.12, 0.14, 0.15]]},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 11, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Title"->{
+  Cell[735, 27, 382, 5, 146, "Title",ExpressionUUID->"49ab34ee-bfd5-49f5-beef-400d3cc456dd",
+   CellTags->"Title"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Title", 42432, 1045}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 152, 3, 43, "Input",ExpressionUUID->"140b05cf-0009-48eb-a109-4fdaf4f0047c"],
+Cell[CellGroupData[{
+Cell[735, 27, 382, 5, 146, "Title",ExpressionUUID->"49ab34ee-bfd5-49f5-beef-400d3cc456dd",
+ CellTags->"Title"],
+Cell[1120, 34, 468, 7, 52, "Text",ExpressionUUID->"94536f76-3fd2-4bf6-b228-fa93ec9acae9"],
+Cell[1591, 43, 3019, 58, 543, "Text",ExpressionUUID->"1faef68b-4268-4d9d-8c4f-257b8215df6b"],
+Cell[CellGroupData[{
+Cell[4635, 105, 274, 7, 154, "Section",ExpressionUUID->"24c487ea-c099-429c-b5ba-a9e5eca397d2"],
+Cell[4912, 114, 387, 7, 86, "Text",ExpressionUUID->"27daf41b-bc9e-4f49-879f-f79a5a409411"],
+Cell[5302, 123, 566, 15, 73, "Input",ExpressionUUID->"1908ef71-8bf3-4996-98cc-902255fa5d9b"],
+Cell[5871, 140, 606, 15, 102, "Input",ExpressionUUID->"98d406d2-60a5-4bc0-a4ec-beee86600a63"],
+Cell[CellGroupData[{
+Cell[6502, 159, 3249, 74, 87, "Code",ExpressionUUID->"66c7d404-bdf4-4062-99f7-fd2790078a7a"],
+Cell[9754, 235, 2650, 53, 737, "Output",ExpressionUUID->"891d9073-d0b4-48f8-8df0-a9e28e9ab179"]
+}, Open  ]],
+Cell[12419, 291, 129, 3, 43, "Input",ExpressionUUID->"1b56c607-3446-476b-8dd0-cb370b4cca05"],
+Cell[12551, 296, 830, 14, 119, "Text",ExpressionUUID->"89d16213-c1c4-48b5-9e35-cb90638e580a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13418, 315, 171, 6, 154, "Section",ExpressionUUID->"01d38c9a-3bce-44ad-8c36-ce146cd4446e"],
+Cell[13592, 323, 607, 11, 153, "Text",ExpressionUUID->"1021b8e3-ed3d-4d50-b105-5f681b24320c"],
+Cell[14202, 336, 503, 14, 43, "Input",ExpressionUUID->"63c83326-beb2-4152-a538-f6222c6ab62d"],
+Cell[14708, 352, 703, 18, 73, "Input",ExpressionUUID->"0c71ab4f-3795-4b6a-baf1-96fe27c1cb5b"],
+Cell[CellGroupData[{
+Cell[15436, 374, 2985, 72, 87, "Code",ExpressionUUID->"0cbc0994-59ee-4c4e-bfd5-81ae715e559d"],
+Cell[18424, 448, 2620, 52, 737, "Output",ExpressionUUID->"718c587a-43fd-4916-8de4-350504717fc4"]
+}, Open  ]],
+Cell[21059, 503, 145, 3, 43, "Input",ExpressionUUID->"72f2536b-9346-4d1d-85f6-5fc731770c6e"],
+Cell[21207, 508, 745, 12, 119, "Text",ExpressionUUID->"b8075559-c1ba-42a6-98cc-58eac0374231"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21989, 525, 240, 5, 99, "Section",ExpressionUUID->"5f8e6101-be3b-477e-bb57-f221494fca40"],
+Cell[22232, 532, 254, 7, 86, "Text",ExpressionUUID->"25376d35-a03c-468f-8407-feffcc87058e"],
+Cell[22489, 541, 1032, 30, 102, "Input",ExpressionUUID->"e2dc4bef-a7e4-47af-a751-98842c5af161"],
+Cell[CellGroupData[{
+Cell[23546, 575, 2779, 72, 87, "Code",ExpressionUUID->"faebdc04-9922-45a0-977a-f6fe768eaa5a"],
+Cell[26328, 649, 2647, 52, 737, "Output",ExpressionUUID->"48e6d032-5626-4303-abaf-2b593b05857b"]
+}, Open  ]],
+Cell[28990, 704, 714, 12, 86, "Text",ExpressionUUID->"33217d2b-5cf4-4d4a-a260-6bab4907af69"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29741, 721, 293, 5, 99, "Section",ExpressionUUID->"10792d6c-5716-4573-80c1-4aa31d4705fd"],
+Cell[30037, 728, 784, 13, 52, "Text",ExpressionUUID->"a035b195-6fba-4c58-8319-d09a4d028f1e"],
+Cell[30824, 743, 587, 15, 43, "Input",ExpressionUUID->"45e3750b-ad65-4805-bbe3-d7f9c31f3e26"],
+Cell[31414, 760, 527, 16, 73, "Input",ExpressionUUID->"ddbe7e02-c6f5-486a-9dc3-2b92fbf7aa3f"],
+Cell[CellGroupData[{
+Cell[31966, 780, 3935, 110, 87, "Code",ExpressionUUID->"dea7ed3c-e530-43b6-82fa-e805e7ff09ec"],
+Cell[35904, 892, 3097, 60, 827, "Output",ExpressionUUID->"44418eca-4576-4797-964a-ff6521c8d094"]
+}, Open  ]],
+Cell[39016, 955, 670, 12, 86, "Text",ExpressionUUID->"db1515e5-774f-43f8-a0fc-3f89bd7e71b1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39723, 972, 208, 4, 99, "Section",ExpressionUUID->"475ab8a8-6736-4109-8450-d4e28f5f5a76"],
+Cell[39934, 978, 967, 17, 186, "Text",ExpressionUUID->"dd385f59-0714-4cbf-bcd3-c014da9ac8f4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40938, 1000, 155, 3, 99, "Section",ExpressionUUID->"be234b64-9d17-4fce-9a91-311cbf9810a0"],
+Cell[CellGroupData[{
+Cell[41118, 1007, 245, 4, 47, "Item",ExpressionUUID->"288421ab-0eb2-4848-bc99-dc4f83cc2e6f"],
+Cell[41366, 1013, 235, 4, 47, "Item",ExpressionUUID->"49789287-176d-4e83-90f0-0bc0abbd0642"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
