@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     48430,       1155]
-NotebookOptionsPosition[     43269,       1057]
-NotebookOutlinePosition[     44269,       1091]
-CellTagsIndexPosition[     44200,       1086]
+NotebookDataLength[     49189,       1175]
+NotebookOptionsPosition[     44026,       1077]
+NotebookOutlinePosition[     45026,       1111]
+CellTagsIndexPosition[     44957,       1106]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -718,18 +718,38 @@ $CellContext`x}, {$CellContext`x, -10, 10}, {$CellContext`y, -10, 10},
   "Out[102]=",ExpressionUUID->"48e6d032-5626-4303-abaf-2b593b05857b"]
 }, Open  ]],
 
-Cell["\<\
-From this, we see that if either of them are cautious or too eager (|a|<|b|), \
-the relationship ends in love for eternity or war depending on where they \
-start from.  On the other hand, when |b|<|a|, or when the lovers are on the \
-more cautious side than narcissistic, the relationship just collapses in a \
-stable node at the origin indicating mutual apathy.   \
-\>", "Text",
+Cell[TextData[{
+ "From this, we see that if either of them are cautious or too eager ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[LeftBracketingBar]", "a", "\[RightBracketingBar]"}], "<", " ", 
+     RowBox[{"\[LeftBracketingBar]", "b", "\[RightBracketingBar]"}]}], ")"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "23fcb2d5-ab0c-4a88-bf35-c37a5ed1cee6"],
+ ", the relationship ends in love for eternity or war depending on where they \
+start from.  On the other hand, when ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[LeftBracketingBar]", "b", "\[RightBracketingBar]"}], "<", " ", 
+     RowBox[{"\[LeftBracketingBar]", "a", "\[RightBracketingBar]"}]}], ")"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2a7f609a-f3d8-4cf8-9857-13ab9fca852d"],
+ ", or when the lovers are on the more cautious side than narcissistic, the \
+relationship just collapses in a stable node at the origin indicating mutual \
+apathy.   "
+}], "Text",
  CellChangeTimes->{{3.7706894884590645`*^9, 3.770689499886525*^9}, {
   3.770689574208649*^9, 3.7706896172255917`*^9}, {3.770690082994466*^9, 
   3.770690097953433*^9}, {3.770690306861496*^9, 3.770690401791473*^9}, {
-  3.770717004241906*^9, 
-  3.7707170164432664`*^9}},ExpressionUUID->"33217d2b-5cf4-4d4a-a260-\
+  3.770717004241906*^9, 3.7707170164432664`*^9}, {3.7707602356365075`*^9, 
+  3.77076026405744*^9}, {3.7707603471371946`*^9, 
+  3.7707604373398647`*^9}},ExpressionUUID->"33217d2b-5cf4-4d4a-a260-\
 6bab4907af69"]
 }, Open  ]],
 
@@ -1085,7 +1105,7 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Title", 44060, 1080}
+ {"Title", 44817, 1100}
  }
 *)
 (*NotebookFileOutline
@@ -1128,33 +1148,33 @@ Cell[CellGroupData[{
 Cell[24484, 591, 2779, 72, 87, "Code",ExpressionUUID->"faebdc04-9922-45a0-977a-f6fe768eaa5a"],
 Cell[27266, 665, 2647, 52, 737, "Output",ExpressionUUID->"48e6d032-5626-4303-abaf-2b593b05857b"]
 }, Open  ]],
-Cell[29928, 720, 714, 12, 86, "Text",ExpressionUUID->"33217d2b-5cf4-4d4a-a260-6bab4907af69"]
+Cell[29928, 720, 1471, 32, 86, "Text",ExpressionUUID->"33217d2b-5cf4-4d4a-a260-6bab4907af69"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30679, 737, 293, 5, 99, "Section",ExpressionUUID->"10792d6c-5716-4573-80c1-4aa31d4705fd"],
-Cell[30975, 744, 784, 13, 52, "Text",ExpressionUUID->"a035b195-6fba-4c58-8319-d09a4d028f1e"],
-Cell[31762, 759, 698, 17, 33, "InlineFormula",ExpressionUUID->"45e3750b-ad65-4805-bbe3-d7f9c31f3e26"],
-Cell[32463, 778, 715, 20, 61, "InlineFormula",ExpressionUUID->"ddbe7e02-c6f5-486a-9dc3-2b92fbf7aa3f"],
+Cell[31436, 757, 293, 5, 99, "Section",ExpressionUUID->"10792d6c-5716-4573-80c1-4aa31d4705fd"],
+Cell[31732, 764, 784, 13, 52, "Text",ExpressionUUID->"a035b195-6fba-4c58-8319-d09a4d028f1e"],
+Cell[32519, 779, 698, 17, 33, "InlineFormula",ExpressionUUID->"45e3750b-ad65-4805-bbe3-d7f9c31f3e26"],
+Cell[33220, 798, 715, 20, 61, "InlineFormula",ExpressionUUID->"ddbe7e02-c6f5-486a-9dc3-2b92fbf7aa3f"],
 Cell[CellGroupData[{
-Cell[33203, 802, 3935, 110, 87, "Code",ExpressionUUID->"dea7ed3c-e530-43b6-82fa-e805e7ff09ec"],
-Cell[37141, 914, 3103, 60, 827, "Output",ExpressionUUID->"44418eca-4576-4797-964a-ff6521c8d094"]
+Cell[33960, 822, 3935, 110, 87, "Code",ExpressionUUID->"dea7ed3c-e530-43b6-82fa-e805e7ff09ec"],
+Cell[37898, 934, 3103, 60, 827, "Output",ExpressionUUID->"44418eca-4576-4797-964a-ff6521c8d094"]
 }, Open  ]],
-Cell[40259, 977, 670, 12, 86, "Text",ExpressionUUID->"db1515e5-774f-43f8-a0fc-3f89bd7e71b1"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[40966, 994, 208, 4, 99, "Section",ExpressionUUID->"475ab8a8-6736-4109-8450-d4e28f5f5a76"],
-Cell[41177, 1000, 967, 17, 186, "Text",ExpressionUUID->"dd385f59-0714-4cbf-bcd3-c014da9ac8f4"]
+Cell[41016, 997, 670, 12, 86, "Text",ExpressionUUID->"db1515e5-774f-43f8-a0fc-3f89bd7e71b1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42181, 1022, 155, 3, 99, "Section",ExpressionUUID->"be234b64-9d17-4fce-9a91-311cbf9810a0"],
+Cell[41723, 1014, 208, 4, 99, "Section",ExpressionUUID->"475ab8a8-6736-4109-8450-d4e28f5f5a76"],
+Cell[41934, 1020, 967, 17, 186, "Text",ExpressionUUID->"dd385f59-0714-4cbf-bcd3-c014da9ac8f4"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[42361, 1029, 245, 4, 47, "Item",ExpressionUUID->"288421ab-0eb2-4848-bc99-dc4f83cc2e6f"],
-Cell[42609, 1035, 235, 4, 47, "Item",ExpressionUUID->"49789287-176d-4e83-90f0-0bc0abbd0642"]
+Cell[42938, 1042, 155, 3, 99, "Section",ExpressionUUID->"be234b64-9d17-4fce-9a91-311cbf9810a0"],
+Cell[CellGroupData[{
+Cell[43118, 1049, 245, 4, 47, "Item",ExpressionUUID->"288421ab-0eb2-4848-bc99-dc4f83cc2e6f"],
+Cell[43366, 1055, 235, 4, 47, "Item",ExpressionUUID->"49789287-176d-4e83-90f0-0bc0abbd0642"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42893, 1045, 167, 3, 99, "Section",ExpressionUUID->"eda456d2-0699-47ca-9449-f13d8d00eb2a"],
-Cell[43063, 1050, 178, 3, 52, "Text",ExpressionUUID->"37a83088-54b1-4619-a6cf-78c7fa717887"]
+Cell[43650, 1065, 167, 3, 99, "Section",ExpressionUUID->"eda456d2-0699-47ca-9449-f13d8d00eb2a"],
+Cell[43820, 1070, 178, 3, 52, "Text",ExpressionUUID->"37a83088-54b1-4619-a6cf-78c7fa717887"]
 }, Open  ]]
 }, Open  ]]
 }
